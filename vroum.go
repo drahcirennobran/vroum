@@ -17,6 +17,8 @@ func main() {
 	delay := flag.Int("delay", 100, "delay in ms")
 	rep := flag.Uint64("rep", 11, "repetitions")
 	flag.Parse()
+	rpio.Open()
+	defer rpio.Close()
 	pin.Output()
 	pin.Low()
 	for i := uint64(0); i < *rep; i++ {
