@@ -17,8 +17,8 @@ func main() {
 	delay := flag.Int("delay", 100, "delay in ms")
 	rep := flag.Uint64("rep", 11, "repetitions")
 	flag.Parse()
-	fmt.Println(*delay)
-	fmt.Println(*rep)
+	pin.Output()
+	pin.Low()
 	for i := uint64(0); i < *rep; i++ {
 		fmt.Printf(".")
 		pin.High()
